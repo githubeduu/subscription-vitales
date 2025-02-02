@@ -9,6 +9,6 @@ public class RabbitMQConfig {
 
     @Bean
     public Queue miCola() {
-        return new Queue("encuesta", true);
+        return new Queue("señales_vitales", false);
     }
 }
