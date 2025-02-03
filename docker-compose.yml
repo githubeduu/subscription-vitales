@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  microservicio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
+    volumes:
+      - C:/informes:/app/informes
+    networks:
+      - servicio-vitales_rabbitmq_network
+    restart: always
+
+networks:
+  servicio-vitales_rabbitmq_network:
+    external: true

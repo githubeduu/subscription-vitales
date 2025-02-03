@@ -25,7 +25,11 @@ public class RabbitMQListener {
 
         String nombreArchivo = "resumen_senales_vitales_" + fechaHora + ".json";
 
-        File archivo = new File("src/main/java/com/example/subscription_vitales/informes/" + nombreArchivo);
+        //localhost
+        //File archivo = new File("src/main/java/com/example/subscription_vitales/informes/" + nombreArchivo);
+        //Docker
+        File archivo = new File( "/app/informes/"  + nombreArchivo);
+       
         objectMapper.writeValue(archivo, mensajeJson);
 
         System.out.println("señales_vitales guardada correctamente");
